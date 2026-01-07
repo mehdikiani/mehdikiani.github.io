@@ -1,0 +1,2158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mahdi Kiani - Ph.D. Candidate in Computer Software Engineering, Lecturer, Researcher in Machine Learning, Deep Learning, and NLP">
+    <meta name="keywords" content="Mahdi Kiani, PhD, Computer Engineering, Machine Learning, Deep Learning, NLP, University of Isfahan, Farhangian University">
+    <meta name="author" content="Mahdi Kiani">
+    
+    <title>Mahdi Kiani | Ph.D. Candidate • Lecturer • Researcher</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <style>
+        /* ========================================
+           CSS Variables - Dark Mode with Warm High Contrast
+           ======================================== */
+        :root {
+            /* Warm High Contrast Palette */
+            --primary: #ff6b35;
+            --primary-light: #ff8c5a;
+            --primary-dark: #e55a2b;
+            --primary-glow: rgba(255, 107, 53, 0.15);
+            
+            --accent: #ffd166;
+            --accent-light: #ffe08a;
+            --accent-dark: #e5b84d;
+            
+            --success: #06d6a0;
+            --info: #118ab2;
+            
+            /* Dark backgrounds */
+            --bg-primary: #0a0a0b;
+            --bg-secondary: #111113;
+            --bg-tertiary: #1a1a1d;
+            --bg-card: #16161a;
+            --bg-card-hover: #1e1e23;
+            
+            /* Text colors */
+            --text-primary: #fffffe;
+            --text-secondary: #b8b8b8;
+            --text-muted: #6b6b6b;
+            
+            /* Borders */
+            --border-color: #2a2a2e;
+            --border-light: #3a3a3e;
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 30px rgba(255, 107, 53, 0.2);
+            
+            /* Typography */
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            
+            /* Spacing */
+            --section-padding: 100px;
+            --container-width: 1100px;
+            
+            /* Transitions */
+            --transition-fast: 0.15s ease;
+            --transition-base: 0.3s ease;
+            --transition-slow: 0.5s ease;
+            
+            /* Border Radius */
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+        }
+
+        /* ========================================
+           Base Styles
+           ======================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background: var(--primary);
+            color: var(--bg-primary);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color var(--transition-fast);
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Section */
+        .section {
+            padding: var(--section-padding) 0;
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 12px;
+        }
+
+        .section-tag i {
+            font-size: 0.9rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-top: 12px;
+            max-width: 600px;
+        }
+
+        /* ========================================
+           Navigation
+           ======================================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: all var(--transition-base);
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 10, 11, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.03em;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-link {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            position: relative;
+            padding: 8px 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width var(--transition-base);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--text-primary);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .nav-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            transition: all var(--transition-fast);
+        }
+
+        /* ========================================
+           Hero Section
+           ======================================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 120px 0 80px;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+        }
+
+        .hero-gradient {
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse 80% 50% at 20% 40%, rgba(255, 107, 53, 0.12) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 80% 60%, rgba(255, 209, 102, 0.08) 0%, transparent 50%);
+        }
+
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(255, 107, 53, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 107, 53, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 8px;
+        }
+
+        .hero-text h1 .highlight {
+            color: var(--primary);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            line-height: 1.8;
+        }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 32px;
+        }
+
+        .hero-tag {
+            padding: 8px 16px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .hero-tag i {
+            color: var(--primary);
+            margin-right: 6px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            font-family: var(--font-main);
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            transition: all var(--transition-fast);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--bg-primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border-light);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            width: 320px;
+            height: 320px;
+        }
+
+        .hero-image-glow {
+            position: absolute;
+            inset: -20px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            opacity: 0.3;
+            filter: blur(40px);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.05); opacity: 0.4; }
+        }
+
+        .hero-image-border {
+            position: absolute;
+            inset: -4px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+        }
+
+        .hero-image img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid var(--bg-primary);
+        }
+
+        .hero-stats {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 24px;
+            background: var(--bg-card);
+            padding: 16px 32px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .hero-stat-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* ========================================
+           About Section
+           ======================================== */
+        .about {
+            background: var(--bg-secondary);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .research-areas {
+            background: var(--bg-card);
+            padding: 32px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+        }
+
+        .research-areas h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .research-areas h3 i {
+            color: var(--primary);
+        }
+
+        .research-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .research-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-md);
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            transition: all var(--transition-fast);
+        }
+
+        .research-item:hover {
+            background: var(--bg-card-hover);
+            color: var(--text-primary);
+            transform: translateX(4px);
+        }
+
+        .research-item i {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        /* ========================================
+           Skills Section
+           ======================================== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .skill-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            padding: 28px;
+            transition: all var(--transition-base);
+        }
+
+        .skill-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .skill-card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .skill-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-glow);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+
+        .skill-card-header h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            padding: 6px 12px;
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-family: var(--font-mono);
+            transition: all var(--transition-fast);
+        }
+
+        .skill-tag:hover {
+            background: var(--bg-card-hover);
+            color: var(--text-primary);
+        }
+
+        /* ========================================
+           Education Section
+           ======================================== */
+        .education {
+            background: var(--bg-secondary);
+        }
+
+        .education-timeline {
+            position: relative;
+            max-width: 800px;
+        }
+
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+        }
+
+        .education-item {
+            position: relative;
+            padding-left: 72px;
+            padding-bottom: 48px;
+        }
+
+        .education-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .education-marker {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50px;
+            height: 50px;
+            background: var(--bg-card);
+            border: 3px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: var(--primary);
+            font-size: 0.9rem;
+            z-index: 1;
+        }
+
+        .education-content {
+            background: var(--bg-card);
+            padding: 28px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-base);
+        }
+
+        .education-content:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .education-degree {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .education-date {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
+            padding: 4px 12px;
+            background: rgba(255, 209, 102, 0.1);
+            border-radius: var(--radius-sm);
+        }
+
+        .education-school {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .education-details {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .education-gpa {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        /* ========================================
+           Experience Section
+           ======================================== */
+        .experience-grid {
+            display: grid;
+            gap: 24px;
+        }
+
+        .experience-card {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 32px;
+            background: var(--bg-card);
+            padding: 32px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-base);
+        }
+
+        .experience-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .experience-meta {
+            border-right: 1px solid var(--border-color);
+            padding-right: 32px;
+        }
+
+        .experience-date {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .experience-company {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .experience-role {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .experience-description {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ========================================
+           Publications Section
+           ======================================== */
+        .publications {
+            background: var(--bg-secondary);
+        }
+
+        .publications-intro {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .scholar-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            transition: all var(--transition-fast);
+        }
+
+        .scholar-link:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .scholar-link i {
+            color: var(--primary);
+        }
+
+        .publications-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .publication-card {
+            background: var(--bg-card);
+            padding: 24px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-base);
+        }
+
+        .publication-card:hover {
+            border-color: var(--primary);
+        }
+
+        .publication-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .publication-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .publication-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .publication-meta i {
+            color: var(--primary);
+        }
+
+        /* ========================================
+           Books Section
+           ======================================== */
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .book-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: all var(--transition-base);
+        }
+
+        .book-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .book-cover {
+            aspect-ratio: 3/4;
+            background: var(--bg-tertiary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+
+        .book-card:hover .book-cover img {
+            transform: scale(1.05);
+        }
+
+        .book-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            padding: 6px 12px;
+            background: var(--primary);
+            color: var(--bg-primary);
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: var(--radius-sm);
+            text-transform: uppercase;
+        }
+
+        .book-info {
+            padding: 24px;
+        }
+
+        .book-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .book-role {
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .book-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .book-link:hover {
+            color: var(--primary-light);
+        }
+
+        /* ========================================
+           Teaching Section
+           ======================================== */
+        .teaching {
+            background: var(--bg-secondary);
+        }
+
+        .teaching-content {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 40px;
+        }
+
+        .video-course {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .video-course-cover {
+            aspect-ratio: 16/9;
+            background: var(--bg-tertiary);
+            position: relative;
+        }
+
+        .video-course-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bg-primary);
+            font-size: 1.5rem;
+            box-shadow: 0 0 40px rgba(255, 107, 53, 0.4);
+            transition: all var(--transition-base);
+        }
+
+        .video-course:hover .video-play {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .video-course-info {
+            padding: 28px;
+        }
+
+        .video-course-info h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .video-course-info p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .video-stats {
+            display: flex;
+            gap: 24px;
+        }
+
+        .video-stat {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .video-stat i {
+            color: var(--primary);
+        }
+
+        .courses-list-section h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .courses-list-section h3 i {
+            color: var(--primary);
+        }
+
+        .course-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 16px;
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            margin-bottom: 12px;
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-fast);
+        }
+
+        .course-item:hover {
+            border-color: var(--primary);
+        }
+
+        .course-item i {
+            color: var(--accent);
+            margin-top: 4px;
+        }
+
+        .course-item-content h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .course-item-content p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* ========================================
+           Presentations & Service
+           ======================================== */
+        .presentations-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .presentations-col h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .presentations-col h3 i {
+            color: var(--primary);
+        }
+
+        .presentation-item {
+            padding: 20px;
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            margin-bottom: 16px;
+            transition: all var(--transition-fast);
+        }
+
+        .presentation-item:hover {
+            border-color: var(--primary);
+        }
+
+        .presentation-item h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .presentation-item p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* ========================================
+           Software Section
+           ======================================== */
+        .software {
+            background: var(--bg-secondary);
+        }
+
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .software-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px;
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-fast);
+        }
+
+        .software-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .software-item i {
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+
+        .software-item span {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        /* ========================================
+           Contact Section
+           ======================================== */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .contact-info p {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px;
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-fast);
+        }
+
+        .contact-method:hover {
+            border-color: var(--primary);
+            transform: translateX(8px);
+        }
+
+        .contact-method i {
+            font-size: 1.25rem;
+            color: var(--primary);
+            width: 24px;
+        }
+
+        .contact-method-content span {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 4px;
+        }
+
+        .contact-method-content a,
+        .contact-method-content p {
+            font-size: 1rem;
+            color: var(--text-primary);
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 32px;
+        }
+
+        .social-link {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            transition: all var(--transition-fast);
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: var(--bg-primary);
+            transform: translateY(-4px);
+        }
+
+        .contact-map {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            padding: 32px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .contact-map i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .contact-map h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .contact-map p {
+            color: var(--text-secondary);
+        }
+
+        /* ========================================
+           Footer
+           ======================================== */
+        .footer {
+            background: var(--bg-secondary);
+            padding: 32px 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-copyright {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            transition: color var(--transition-fast);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* ========================================
+           Responsive Design
+           ======================================== */
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-tags {
+                justify-content: center;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .hero-image-wrapper {
+                width: 260px;
+                height: 260px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .teaching-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .presentations-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --section-padding: 60px;
+            }
+
+            .nav-toggle {
+                display: flex;
+                z-index: 1001;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background: var(--bg-primary);
+                flex-direction: column;
+                justify-content: center;
+                gap: 32px;
+                transition: right var(--transition-slow);
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .nav-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .nav-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+
+            .experience-card {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-meta {
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                padding-right: 0;
+                padding-bottom: 16px;
+            }
+
+            .hero-stats {
+                position: relative;
+                bottom: 0;
+                margin-top: 40px;
+            }
+
+            .education-timeline::before {
+                left: 15px;
+            }
+
+            .education-item {
+                padding-left: 52px;
+            }
+
+            .education-marker {
+                width: 32px;
+                height: 32px;
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-image-wrapper {
+                width: 200px;
+                height: 200px;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .books-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .software-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">MK</a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#publications" class="nav-link">Research</a></li>
+                <li><a href="#teaching" class="nav-link">Teaching</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-grid"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text" data-aos="fade-right" data-aos-duration="800">
+                    <h1>Mahdi <span class="highlight">Kiani</span></h1>
+                    <p class="hero-subtitle">Ph.D. Candidate • Lecturer • Researcher</p>
+                    <p class="hero-description">
+                        Ph.D. Candidate in Computer Software Engineering at University of Isfahan, 
+                        specializing in Machine Learning, Deep Learning, and Natural Language Processing. 
+                        Currently serving as Lecturer at Farhangian University.
+                    </p>
+                    <div class="hero-tags">
+                        <span class="hero-tag"><i class="fas fa-brain"></i> Machine Learning</span>
+                        <span class="hero-tag"><i class="fas fa-robot"></i> Deep Learning</span>
+                        <span class="hero-tag"><i class="fas fa-language"></i> NLP</span>
+                        <span class="hero-tag"><i class="fas fa-music"></i> Audio Processing</span>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="files/cv/MahdiKiani_CV.pdf" class="btn btn-primary" download>
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i> Get in Touch
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                    <div class="hero-image-wrapper">
+                        <div class="hero-image-glow"></div>
+                        <div class="hero-image-border"></div>
+                        <img src="images/profile.jpg" alt="Mahdi Kiani">
+                    </div>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <div class="hero-stat-value">20+</div>
+                            <div class="hero-stat-label">Years Exp.</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-value">4</div>
+                            <div class="hero-stat-label">Books</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-value">1500+</div>
+                            <div class="hero-stat-label">Video Min.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag"><i class="fas fa-user"></i> Introduction</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right" data-aos-delay="100">
+                    <p>
+                        I am a Ph.D. candidate in Computer Software Engineering at the University of Isfahan, 
+                        with a strong foundation in both academia and industry. My research focuses on the 
+                        intersection of Machine Learning, Deep Learning, Natural Language Processing, and 
+                        Audio Processing, particularly in music-related applications.
+                    </p>
+                    <p>
+                        With over two decades of experience in software development, I have led teams, 
+                        developed enterprise applications, and contributed to educational initiatives as 
+                        both an author and technical editor of programming textbooks used in the national curriculum.
+                    </p>
+                    <p>
+                        Currently, I serve as a Lecturer at Farhangian University, where I teach courses 
+                        on technology in education, teaching strategies, and operating systems. My goal is 
+                        to bridge the gap between cutting-edge research and practical education.
+                    </p>
+                </div>
+                <div class="research-areas" data-aos="fade-left" data-aos-delay="200">
+                    <h3><i class="fas fa-flask"></i> Research Areas</h3>
+                    <div class="research-list">
+                        <div class="research-item">
+                            <i class="fas fa-check"></i>
+                            Machine Learning
+                        </div>
+                        <div class="research-item">
+                            <i class="fas fa-check"></i>
+                            Deep Learning
+                        </div>
+                        <div class="research-item">
+                            <i class="fas fa-check"></i>
+                            Natural Language Processing
+                        </div>
+                        <div class="research-item">
+                            <i class="fas fa-check"></i>
+                            Audio Processing (Music)
+                        </div>
+                        <div class="research-item">
+                            <i class="fas fa-check"></i>
+                            Blockchain Technology
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag"><i class="fas fa-code"></i> Expertise</span>
+                <h2 class="section-title">Technical Skills</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-card-header">
+                        <div class="skill-icon"><i class="fas fa-palette"></i></div>
+                        <h3>Front-End Development</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Angular</span>
+                        <span class="skill-tag">Bootstrap</span>
+                        <span class="skill-tag">jQuery</span>
+                    </div>
+                </div>
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-card-header">
+                        <div class="skill-icon"><i class="fas fa-server"></i></div>
+                        <h3>Back-End Development</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C/C++</span>
+                        <span class="skill-tag">SQL Server</span>
+                        <span class="skill-tag">ASP.NET Core</span>
+                        <span class="skill-tag">Entity Framework</span>
+                    </div>
+                </div>
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-card-header">
+                        <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
+                        <h3>Frameworks & Tools</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">ASP.NET Core MVC</span>
+                        <span class="skill-tag">Flutter</span>
+                        <span class="skill-tag">Windows Forms</span>
+                        <span class="skill-tag">WPF</span>
+                        <span class="skill-tag">Web API</span>
+                    </div>
+                </div>
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="skill-card-header">
+                        <div class="skill-icon"><i class="fas fa-brain"></i></div>
+                        <h3>AI & Data Science</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">NLP</span>
+                        <span class="skill-tag">Deep Learning</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section education" id="education">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag"><i class="fas fa-graduation-cap"></i> Academic Background</span>
+                <h2 class="section-title">Education</h2>
+            </div>
+            <div class="education-timeline">
+                <div class="education-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="education-marker">Ph.D</div>
+                    <div class="education-content">
+                        <div class="education-header">
+                            <div class="education-degree">Ph.D. in Computer Engineering (Software)</div>
+                            <span class="education-date">2021 - Present</span>
+                        </div>
+                        <div class="education-school">University of Isfahan, Iran</div>
+                        <div class="education-details">
+                            Research Areas: Machine Learning, Deep Learning, Natural Language Processing, Audio Processing (Music)
+                        </div>
+                        <span class="education-gpa"><i class="fas fa-star"></i> GPA: 19.23/20</span>
+                    </div>
+                </div>
+                <div class="education-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="education-marker">M.S</div>
+                    <div class="education-content">
+                        <div class="education-header">
+                            <div class="education-degree">Master's in Business Management</div>
+                            <span class="education-date">2018 - 2020</span>
+                        </div>
+                        <div class="education-school">University of Isfahan, Iran</div>
+                        <div class="education-details">
+                            Thesis: Discrete Event Simulation of the Impact of Blockchain Technology on Supply Chain Performance
+                        </div>
+                        <span class="education-gpa"><i class="fas fa-star"></i> GPA: 19/20</span>
+                    </div>
+                </div>
+                <div class="education-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="education-marker">B.S</div>
+                    <div class="education-content">
+                        <div class="education-header">
+                            <div class="education-degree">Bachelor's in Computer Engineering (Software)</div>
+                            <span class="education-date">2003 - 2007</span>
+                        </div>
+                        <div class="education-school">Islamic Azad University of Najafabad, Iran</div>
+                        <div class="education-details">
+                            Thesis: Examination and Analysis of the Effect of Design Patterns in Software Development (Case Study: A Reservation System)
+                        </div>
+                        <span class="education-gpa"><i class="fas fa-star"></i> GPA: 16.24/20</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section experience" id="experience">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag"><i class="fas fa-briefcase"></i> Career</span>
+                <h2 class="section-title">Work Experience</h2>
+            </div>
+            <div class="experience-grid">
+                <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="experience-meta">
+                        <div class="experience-date">Fall 2024 - Present</div>
+                        <div class="experience-company">Farhangian University, Isfahan</div>
+                    </div>
+                    <div class="experience-details">
+                        <div class="experience-role">Lecturer (Full-Time)</div>
+                        <div class="experience-description">
+                            Teaching courses including Application of Technology in Teaching, Teaching Strategies, 
+                            and Operating Systems. Responsible for curriculum development and student mentorship 
+                            in teacher education programs.
+                        </div>
+                    </div>
+                </div>
+                <div class="experience-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="experience-meta">
+                        <div class="experience-date">2022 - Fall 2024</div>
+                        <div class="experience-company">General Directorate of Education, Isfahan</div>
+                    </div>
+                    <div class="experience-details">
+                        <div class="experience-role">Head of IT and Communications Department</div>
+                        <div class="experience-description">
+                            Led IT operations for the provincial education department, overseeing digital infrastructure, 
+                            technology integration in education, and staff training programs across multiple institutions.
+                        </div>
+                    </div>
+                </div>
+                <div class="experience-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="experience-meta">
+                        <div class="experience-date">2008 - 2010</div>
+                        <div class="experience-company">Omran Abshar Espadana Company</div>
+                    </div>
+                    <div class="experience-details">
+                        <div class="experience-role">Software Developer & IT Manager</div>
+                        <div class="experience-description">
+                            Developed and maintained enterprise software solutions. Managed IT infrastructure 
+                            and led digital transformation initiatives within the organization.
+                        </div>
+                    </div>
+                </div>
+                <div class="experience-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="experience-meta">
+                        <div class="experience-date">2009 (Part-time)</div>
+                        <div class="experience-company">Nahib Javan Company</div>
+                    </div>
+                    <div class="experience-details">
+                        <div class="experience-role">Development Team Manager & Senior Developer</div>
+                        <div class="experience-description">
+                            Managed development team and served as consultant for software architecture decisions. 
+                            Led implementation of key projects and mentored junior developers.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section class="section publications" id="publications">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag"><i class="fas fa-file-alt"></i> Research</span>
+                <h2 class="section-title">Publications</h2>
+                <p class="section-subtitle">My research contributions in Machine Learning, NLP, and related fields.</p>
+            </div>
+            <div class="publications-intro" data-aos="fade-up" data-aos-delay="100">
+                <p style="color: var(--text-secondary);">View my complete publication list and citations on Google Scholar.</p>
+                <a href="https://scholar.google.com/citations?user=1zVd_CYAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="scholar-link">
+                    <i class="fas fa-graduation-cap"></i> Google Scholar Profile
+                </a>
+            </div>
+            
+            <!-- Books Section -->
+            <div class="section-header" style="margin-top: 60px;" data-aos="fade-up">
+                <span class="section-tag"><i class="fas fa-book"></i> Publications</span>
+                <h2 class="section-title">Books</h2>
+            </div>
+            <div class="books-grid">
+                <div class="book-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="book-cover">
+                        <img src="images/book-mvc5.jpg" alt="Introduction to ASP.NET MVC 5">
+                        <span class="book-badge">Author</span>
+                    </div>
+                    <div class="book-info">
+                        <h4 class="book-title">Introduction to Microsoft ASP.NET MVC 5</h4>
+                        <p class="book-role">Technical Book (Persian)</p>
+                        <a href="files/books/Introduction-To-MVC5-By-Mehdi-Kiani.pdf" class="book-link" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+                <div class="book-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="book-cover">
+                        <img src="images/book-ef.jpg" alt="Introduction to Entity Framework Code First">
+                        <span class="book-badge">Author</span>
+                    </div>
+                    <div class="book-info">
+                        <h4 class="book-title">Introduction to Microsoft Entity Framework Code First</h4>
+                        <p class="book-role">Technical Book (Persian)</p>
+                        <a href="files/books/Introduction-To-Entity-Framework-Code-First-By-Mehdi-Kiani.pdf" class="book-link" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+                <div class="book-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="book-cover">
+                        <img src="images/book-student.jpg" alt="Programming and Database Development">
+                        <span class="book-badge">Editor</span>
+                    </div>
+                    <div class="book-info">
+                        <h4 class="book-title">Programming and Database Development</h4>
+                        <p class="book-role">Student Textbook - Ministry of Education</p>
+                        <a href="files/books/C211287_Std.pdf" class="book-link" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+                <div class="book-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="book-cover">
+                        <img src="images/book-teacher.jpg" alt="Programming and Database Development - Teacher Guide">
+                        <span class="book-badge">Editor</span>
+                    </div>
+                    <div class="book-info">
+                        <h4 class="book-title">Programming and Database Development - Teacher Guide</h4>
+                        <p class="book-role">Teacher Guide - Ministry of Education</p>
+                        <a href="files/books/C211816_teacher.pdf" class="book-link" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teaching Section -->
+    <section class="section teaching" id="teaching">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag"><i class="fas fa-chalkboard-teacher"></i> Education</span>
+                <h2 class="section-title">Teaching Experience</h2>
+            </div>
+            <div class="teaching-content">
+                <div class="video-course" data-aos="fade-right" data-aos-delay="100">
+                    <div class="video-course-cover">
+                        <img src="images/course-cover.jpg" alt="ASP.NET Core MVC Course">
+                        <div class="video-play"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="video-course-info">
+                        <h3>ASP.NET Core MVC with C#</h3>
+                        <p>Comprehensive video course covering C# programming and ASP.NET Core MVC development from basics to advanced topics. Includes all source code and practical examples.</p>
+                        <div class="video-stats">
+                            <div class="video-stat"><i class="fas fa-clock"></i> 1500+ Minutes</div>
+                            <div class="video-stat"><i class="fas fa-book-open"></i> 21 Modules</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="courses-list-section" data-aos="fade-left" data-aos-delay="200">
+                    <h3><i class="fas fa-university"></i> University Courses</h3>
+                    <div class="course-item">
+                        <i class="fas fa-laptop-code"></i>
+                        <div class="course-item-content">
+                            <h4>Application of Technology in Teaching</h4>
+                            <p>Farhangian University • Fall 2024 - Present</p>
+                        </div>
+                    </div>
+                    <div class="course-item">
+                        <i class="fas fa-cogs"></i>
+                        <div class="course-item-content">
+                            <h4>Operating Systems</h4>
+                            <p>Farhangian University • Fall 2024 - Present</p>
+                        </div>
+                    </div>
+                    <div class="course-item">
+                        <i class="fas fa-globe"></i>
+                        <div class="course-item-content">
+                            <h4>Web Programming</h4>
+                            <p>University of Isfahan • Fall 2023</p>
+                        </div>
+                    </div>
+                    <div class="course-item">
+                        <i class="fas fa-code"></i>
+                        <div class="course-item-content">
+                            <h4>Advanced Programming</h4>
+                            <p>University of Isfahan • Spring 2023</p>
+                        </div>
+                    </div>
+                    <div class="course-item">
+                        <i class="fas fa-database"></i>
+                        <div class="course-item-content">
+                            <h4>Data Mining</h4>
+                            <p>University of Isfahan • Fall 2022</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Presentations & Service Section -->
+    <section class="section presentations" id="presentations">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag"><i class="fas fa-microphone-alt"></i> Contributions</span>
+                <h2 class="section-title">Presentations & Service</h2>
+            </div>
+            <div class="presentations-grid">
+                <div class="presentations-col" data-aos="fade-right" data-aos-delay="100">
+                    <h3><i class="fas fa-presentation"></i> Presentations</h3>
+                    <div class="presentation-item">
+                        <h4>Introduction to Machine Learning, AI, Text Mining, and Deep Learning</h4>
+                        <p>General Directorate of Education, Isfahan • 2022</p>
+                    </div>
+                    <div class="presentation-item">
+                        <h4>Familiarity with Blockchain Technology</h4>
+                        <p>Technical Computer Group, Isfahan Province • 2020</p>
+                    </div>
+                    <div class="presentation-item">
+                        <h4>Principles of Software Development, Methods, and Architectures</h4>
+                        <p>Khwarizmi Teen Festival (National Stage) • 2023</p>
+                    </div>
+                </div>
+                <div class="presentations-col" data-aos="fade-left" data-aos-delay="200">
+                    <h3><i class="fas fa-gavel"></i> Referee Service</h3>
+                    <div class="presentation-item">
+                        <h4>Web-Based Program Development Competition</h4>
+                        <p>Khwarizmi Teen Festival (National Stage) • 2023</p>
+                    </div>
+                    <div class="presentation-item">
+                        <h4>Web-Based Program Development Competition</h4>
+                        <p>Khwarizmi Teen Festival (National Stage) • 2022</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Software Section -->
+    <section class="section software" id="software">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag"><i class="fas fa-laptop-code"></i> Portfolio</span>
+                <h2 class="section-title">Developed Applications</h2>
+                <p class="section-subtitle">Enterprise software solutions built throughout my career.</p>
+            </div>
+            <div class="software-grid">
+                <div class="software-item" data-aos="fade-up" data-aos-delay="50">
+                    <i class="fas fa-ticket-alt"></i>
+                    <span>Ticketing System</span>
+                </div>
+                <div class="software-item" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Online Buying & Selling</span>
+                </div>
+                <div class="software-item" data-aos="fade-up" data-aos-delay="150">
+                    <i class="fas fa-file-invoice"></i>
+                    <span>Procurement System</span>
+                </div>
+                <div class="software-item" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-users"></i>
+                    <span>HR Management</span>
+                </div>
+                <div class="software-item" data-aos="fade-up" data-aos-delay="250">
+                    <i class="fas fa-building"></i>
+                    <span>Office Automation</span>
+                </div>
+                <div class="software-item" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Dynamic Report Generator</span>
+                </div>
+                <div class="software-item" data-aos="fade-up" data-aos-delay="350">
+                    <i class="fas fa-comments"></i>
+                    <span>Forum Platform</span>
+                </div>
+                <div class="software-item" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>Form & Process Builder</span>
+                </div>
+                <div class="software-item" data-aos="fade-up" data-aos-delay="450">
+                    <i class="fas fa-newspaper"></i>
+                    <span>Content Management</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag"><i class="fas fa-envelope"></i> Connect</span>
+                <h2 class="section-title">Get in Touch</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right" data-aos-delay="100">
+                    <h3>Let's Connect</h3>
+                    <p>Whether you're interested in research collaboration, have questions about my work, or want to discuss teaching opportunities, I'd love to hear from you.</p>
+                    <div class="contact-methods">
+                        <a href="mailto:mkiani3000@gmail.com" class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div class="contact-method-content">
+                                <span>Primary Email</span>
+                                <p>mkiani3000@gmail.com</p>
+                            </div>
+                        </a>
+                        <a href="mailto:me.kiani@eng.ui.ac.ir" class="contact-method">
+                            <i class="fas fa-university"></i>
+                            <div class="contact-method-content">
+                                <span>Academic Email</span>
+                                <p>me.kiani@eng.ui.ac.ir</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/YOUR_USERNAME" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://t.me/YOUR_USERNAME" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Telegram">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+                        <a href="https://twitter.com/YOUR_USERNAME" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=1zVd_CYAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Google Scholar">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-map" data-aos="fade-left" data-aos-delay="200">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Location</h4>
+                    <p>Isfahan, Iran</p>
+                    <p style="margin-top: 8px; font-size: 0.9rem;">University of Isfahan<br>Farhangian University</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-copyright">© <span id="current-year"></span> Mahdi Kiani. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer">Hosted on GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Active link highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Set current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navHeight = navbar.offsetHeight;
+                    const targetPosition = target.offsetTop - navHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
